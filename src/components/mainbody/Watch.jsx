@@ -9,7 +9,7 @@ import { MdAccountCircle } from "react-icons/md";
 
 
 
-const VideoplayCard = ({items}) => {
+const VideoplayCard = ({data}) => {
   window.scrollTo(0,0);
   const [commentvalue,setCommentvalue] = useState([]);
   const [value,setValue] = useState("");
@@ -20,8 +20,8 @@ const VideoplayCard = ({items}) => {
   }
   const params = useParams();
   const source = `https://www.youtube.com/embed/${params.id}?autoplay=1`
-
-  const viewData = items.find((term)=>{return term.id===params.id});
+  const viewData = data.find((item)=>{return item.id===params.id});
+  
 
   console.log(viewData);
   const views = viewData.statistics.viewCount;

@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Routes,Route } from 'react-router-dom';
 import Watch from "./Watch";
 import SearchPage from '../../pages/Search/SearchPage';
-import TrendingPage from '../../pages/Trending/TrendingPage';
 
 const Main = ({data,bool,search,searchdata,searchbool}) => {
   
@@ -20,7 +19,7 @@ const Main = ({data,bool,search,searchdata,searchbool}) => {
            })
         } />
      <Route path=":id" element={<Watch
-     items={data}/>}/>
+     data={data}/>}/>
 
      <Route path='/search' element={
       <SearchPage

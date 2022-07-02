@@ -13,14 +13,14 @@ const [searchbtnBool,setSearchbtnBool] = useState(true);
 const btnHandler = (bool)=>{
   setSearchbtnBool(bool);
 }
-const apiKey = process.env.API_KEY;
-const url =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=200&key=AIzaSyCojCz8YwFE0nXVStDGcez9VOc56KLiR4A`;
+// const apiKey = process.env.API_KEY;
+const url =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=200&key=AIzaSyAcHu3NpiTz8jhmf083iW76zKJKyG97_xE`;
 const fetchdata = async ()=>{
   const response = await fetch(url);
   const apidata = await response.json();
   const items = apidata.items;
   setData(items);
-  setBool(true);
+  setBool(!bool);
   console.log(items);
 };
 
@@ -30,7 +30,7 @@ useEffect(()=>{
 },[]);
 
 const fetchingSearch = async ()=>{
-  const output = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelType=any&maxResults=20&order=relevance&q=${search}&safeSearch=moderate&type=video&key=AIzaSyCojCz8YwFE0nXVStDGcez9VOc56KLiR4A`);
+  const output = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelType=any&maxResults=20&order=relevance&q=${search}&safeSearch=moderate&type=video&key=AIzaSyAcHu3NpiTz8jhmf083iW76zKJKyG97_xE`);
   const maindata = await output.json();
   const arryofdata = maindata.items;
   setSearchdata(arryofdata);
