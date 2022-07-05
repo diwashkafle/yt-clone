@@ -10,7 +10,7 @@ const Main = ({data,bool,search,searchdata,searchbool}) => {
   return (
     <div className='h-[full] w-[95.7%] bg-[whitesmoke] relative ml-[4.3vw] grid grid-cols-4 mt-14'>
       <Routes>
-        <Route path='/' element={
+        <Route path='*' element={
            bool && data.map((item)=>{
             return <EachvideoCard
              items={item}
