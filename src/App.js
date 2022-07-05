@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from "react";
 import Main from "./components/mainbody/Main";
 import Nav from "./components/Nav";
 import Siderbar from "./components/Sidebar";
-import {Router,Route} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 
 function App() {
 const [data, setData] = useState();
@@ -57,7 +57,7 @@ setSearch(e.target.value);
     />
     <div className="flex">
     <Siderbar/>
-    <Router>
+    <Routes>
       <Route path="*" element={
     <Main
     data={data}
@@ -65,7 +65,7 @@ setSearch(e.target.value);
     search={search}
     searchdata={searchdata}
     searchbool={searchbool}
-    />}/></Router>
+    />}/></Routes>
     </div>
     </div>
     </>
