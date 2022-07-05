@@ -21,13 +21,13 @@ const VideoplayCard = ({data}) => {
   const params = useParams();
   const source = `https://www.youtube.com/embed/${params.id}?autoplay=1`
   const viewData = data.find((item)=>{return item.id===params.id});
+  console.log(data);
   
 
   console.log(viewData);
   const views = viewData.statistics.viewCount;
   const title = viewData.snippet.title;
   const decription = viewData.snippet.description;
-  const date = viewData.snippet.publishedAt;
   const like = viewData.statistics.likeCount;
   const comment = viewData.statistics.commentCount;
   const channelName = viewData.snippet.channelTitle;

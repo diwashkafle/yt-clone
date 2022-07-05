@@ -18,8 +18,8 @@ const Main = ({data,bool,search,searchdata,searchbool}) => {
              />
            })
         } />
-     <Route path=":id" element={<Watch
-     data={data}/>}/>
+     {/* <Route path=":id" element={<Watch
+     data={data}/>}/> */}
 
      <Route path='/search' element={
       <SearchPage
